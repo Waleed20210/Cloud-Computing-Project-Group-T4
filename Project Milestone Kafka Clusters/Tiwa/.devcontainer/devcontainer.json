@@ -1,7 +1,7 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/docker-existing-dockerfile
 {
-	"name": "Existing Dockerfile",
+	"name": "Cloud Computing - Tiwa",
 	"build": {
 		// Sets the run context to one level up instead of the .devcontainer folder.
 		"context": "..",
@@ -9,15 +9,16 @@
 		"dockerfile": "../Dockerfile"
 	},
 	"features": {
-		"ghcr.io/dhoeric/features/google-cloud-cli:1": {}
+		// "ghcr.io/dhoeric/features/google-cloud-cli:1": {}
 	},
 	"customizations": {
 		"vscode": {
 			"extensions": [
-				"ms-python.python"
+				"ms-python.python",
+				"andrewdircks.google-cloud-platform-ssh"
 			]
 		}
-	}
+	},
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
@@ -26,7 +27,7 @@
 	// "forwardPorts": [],
 
 	// Uncomment the next line to run commands after the container is created.
-	// "postCreateCommand": "cat /etc/os-release",
+	"postCreateCommand": "cat /etc/os-release",
 
 	// Configure tool-specific properties.
 	// "customizations": {},

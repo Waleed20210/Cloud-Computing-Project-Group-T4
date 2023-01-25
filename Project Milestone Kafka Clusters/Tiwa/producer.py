@@ -2,7 +2,7 @@ from google.cloud import pubsub_v1
 
 # TODO(developer)
 project_id = "soy-ascent-362106"
-topic_id = "projects/soy-ascent-362106/topics/project1"
+topic_id = "project1"
 
 publisher = pubsub_v1.PublisherClient()
 # The `topic_path` method creates a fully qualified identifier
