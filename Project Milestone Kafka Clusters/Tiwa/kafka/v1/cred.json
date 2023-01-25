@@ -2,7 +2,8 @@
 "bootstrap.servers":"pkc-3w22w.us-central1.gcp.confluent.cloud:9092",
 "security.protocol":"SASL_SSL",
 "sasl.mechanisms":"PLAIN",
-"sasl.username":"ELDJSHCTHAEKGBHB",
-"sasl.password":"EdcnGEPZVhlGlnA/Zfa+7blxguqAXGupp6DDzpY21XvVExwSzmmOqxw5JSPCRWEz",
+"sasl.username":"",
+"sasl.password":"",
 "session.timeout.ms":1000
 }
+// removed username & password for security
