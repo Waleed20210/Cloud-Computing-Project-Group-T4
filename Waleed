@@ -1,0 +1,48 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNJzFrF6Byz8+khIj8AuVZB"
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "code",
+      "execution_count": 2,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "TbtI1PUtcQbj",
+        "outputId": "7fba3d77-5b6e-4fc0-a841-61019539156c"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Cloning into 'SOFE4630U-MS1'...\n",
+            "remote: Enumerating objects: 109, done.\u001b[K\n",
+            "remote: Counting objects: 100% (109/109), done.\u001b[K\n",
+            "remote: Compressing objects: 100% (105/105), done.\u001b[K\n",
+            "remote: Total 109 (delta 23), reused 54 (delta 4), pack-reused 0\u001b[K\n",
+            "Receiving objects: 100% (109/109), 860.00 KiB | 7.05 MiB/s, done.\n",
+            "Resolving deltas: 100% (23/23), done.\n"
+          ]
+        }
+      ],
+      "source": [
+        "!git clone https://github.com/GeorgeDaoud3/SOFE4630U-MS1.git"
+      ]
+    }
+  ]
+}
