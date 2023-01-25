@@ -1,8 +1,0 @@
-{
-"bootstrap.servers":"pkc-4r087.us-west2.gcp.confluent.cloud:9092",
-"security.protocol":"SASL_SSL",
-"sasl.mechanisms":"PLAIN",
-"sasl.username":"QHVHY3ULCO66G3WE",
-"sasl.password":"pkc-4r087.us-west2.gcp.confluent.cloud:9092",
-"session.timeout.ms":1000
-}
