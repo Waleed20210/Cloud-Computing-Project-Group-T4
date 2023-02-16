@@ -1,0 +1,8 @@
+{
+"bootstrap.servers":"pkc-v12gj.northamerica-northeast2.gcp.confluent.cloud:9092",
+"security.protocol":"SASL_SSL",
+"sasl.mechanisms":"PLAIN",
+"sasl.username":"WO64KNBBG36BJSLL",
+"sasl.password":"UpWQTCC7/M8Di4NmGhhhYw4s77GI9npnaovzUqjvtTnSt/jU21Z6vCF2kkznNJNb",
+"session.timeout.ms":1000
+}
