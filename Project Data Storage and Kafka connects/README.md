@@ -22,3 +22,6 @@
     > Asynchronous operations between Kafka and the source/sink connector. Smaller service ecosystem. I.e. no need to deploy a full service dedicated to writing/parsing/decoding events to MySQL and inviting a point of failure. The connector handles the pushing to/from the source/sink applicaitons.
 
     > Disadvantages: tight coupling
+### Design
+- Python source code attached.
+- [https://drive.google.com/file/d/1-nedDo0bMYRM-Oq_YVPeEnY5oM8yig2Z/view?usp=share_link](https://drive.google.com/file/d/1-nedDo0bMYRM-Oq_YVPeEnY5oM8yig2Z/view?usp=share_link).
