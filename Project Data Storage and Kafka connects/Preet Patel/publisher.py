@@ -5,8 +5,8 @@ import numpy as np
 import random 
 import json
 
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"]=""
-project_id = ""
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="<Credential File Path>"
+project_id = "<Project-id>"
 topic_id = "smartmeter_in"
 
 publisher = pubsub_v1.PublisherClient()

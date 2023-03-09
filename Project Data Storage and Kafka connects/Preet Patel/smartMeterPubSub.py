@@ -22,6 +22,7 @@ import apache_beam as beam
 from apache_beam.options.pipeline_options import PipelineOptions
 from apache_beam.options.pipeline_options import SetupOptions
 
+import pymysql
 
 #Filter: Filter: Eliminate records with missing measurements (containing None)
 def eliminateMissingValues(element):
@@ -47,7 +48,30 @@ class ConvertPresTemp(beam.DoFn):
             result['pressure'] = pressure
         
         return [result]
-            
+
+#to MySQL: connects to mysql database server in GKE and runs query to save data to a table           
+class saveData(beam.DoFn):
+
+    def process(self, element):
+        
+        #Connect to server
+        mydb = pymysql.connect(
+        host="34.95.47.31",
+        port=3306,
+        user="usr",
+        password="sofe4630u",
+        database="Readings"
+        )
+
+        #Perform query
+        mycursor = mydb.cursor()
+
+        sql = "INSERT INTO dataflowReadings (time, profile_name, humidity, temperature, pressure) VALUES (%s, %s, %s, %s, %s)"
+        val = (element['time'], element['profile_name'], element['humidity'], element['temperature'], element['pressure'])
+        mycursor.execute(sql, val)
+
+        mydb.commit()
+
 def run(argv=None):
   parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
   parser.add_argument('--input', dest='input', required=True,
@@ -62,12 +86,14 @@ def run(argv=None):
     readings= (p | "Read from Pub/Sub" >> beam.io.ReadFromPubSub(topic=known_args.input)
         | "toDict" >> beam.Map(lambda x: json.loads(x)));
     
-    filtered = readings | 'filterData' >> beam.Filter(eliminateMissingValues)
+    filtered = readings | 'Filter' >> beam.Filter(eliminateMissingValues)
 
-    conversions = filtered | 'ConvertData' >> beam.ParDo(ConvertPresTemp())
+    conversions = filtered | 'Convert' >> beam.ParDo(ConvertPresTemp())
 
-    (conversions | 'to byte' >> beam.Map(lambda x: json.dumps(x).encode('utf8'))
-        |   'to Pub/sub' >> beam.io.WriteToPubSub(topic=known_args.output));
+    (conversions | 'to bytes' >> beam.Map(lambda x: json.dumps(x).encode('utf8'))
+        |   'to Pub/Sub' >> beam.io.WriteToPubSub(topic=known_args.output));
+
+    (conversions | 'to MySQL' >> beam.ParDo(saveData()));
         
 if __name__ == '__main__':
   logging.getLogger().setLevel(logging.INFO)

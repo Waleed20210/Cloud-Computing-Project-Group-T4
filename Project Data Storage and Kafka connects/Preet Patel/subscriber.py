@@ -2,8 +2,8 @@ import os
 from concurrent.futures import TimeoutError
 from google.cloud import pubsub_v1
 
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"]=""
-project_id = ""
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="<Credential File Path>"
+project_id = "<Project-id>"
 subscription_id = "smartmeter_out-sub"
 
 subscriber = pubsub_v1.SubscriberClient()
