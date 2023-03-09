@@ -56,10 +56,10 @@ class saveData(beam.DoFn):
         
         #Connect to server
         mydb = pymysql.connect(
-        host="34.95.47.31",
+        host="<MySQL Server IP>",
         port=3306,
         user="usr",
-        password="sofe4630u",
+        password="<Password>",
         database="Readings"
         )
 
