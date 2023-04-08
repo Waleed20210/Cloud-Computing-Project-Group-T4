@@ -5,7 +5,7 @@
 - [Cloud Project Demo Part1 ](https://drive.google.com/file/d/1l-yf8NnBPlca9OMT5YqYcd6cTy28LFTg/view?usp=share_link)
 - [Cloud Project Demo Part2 ](https://drive.google.com/file/d/1F1JJ9czU8AHLYVgC6FzjNKMN7j64o6xh/view?usp=share_link)
 
-## Team - Group 4 
+## Team - Group T4 
 Waleed El Alawi (100764573)<br> 
 Preet Patel (100708239) <br>
 Tiwaloluwa Ojo (100700622)<br>
