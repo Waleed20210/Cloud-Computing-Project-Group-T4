@@ -7,5 +7,16 @@ Tiwaloluwa Ojo (100700622)<br>
 Aaditya Rajput (100622434)<br>
 
 
-## Short Project Description
-There are commercial benefits to analyzing and predicting the movements of vehicles and pedestrians around various transportation locations. Such locations are included but not limited to highways, intersections, and roundabouts. By implementing stream processing for predicting vehicle speeds at highways, our application can help improve the accuracy and reliability of traffic speed predictions. This can be a very beneficial tool that can be utilized when enforcing speed limits, alleviating congestion and traffic during peak traffic hours and getting an idea of road patterns based on time and other factors. We aim to utilize various tools and techniques learned throughout the duration of the semester to implement this project.
+# Course Work Repository
+Welcome to our Course Work Repository! This repository contains all of the course work completed throughout the semester, organized into their respective folders. The course work includes project milestones and the final project.
+
+## Table of Contents
+Project Milestones
+Final Project
+
+## Project Milestones
+The project milestones folder contains all of the milestones completed throughout the semester for the final project. Each milestone is organized in its own folder with the milestone description as the folder name. This folder contains all of the code and resources used to complete the milestone as well as the questions answered in that milestone.
+
+## Final Project
+The final project folder contains all of the code and resources used to complete the final project. The final report is embedded in the readme file.
+
