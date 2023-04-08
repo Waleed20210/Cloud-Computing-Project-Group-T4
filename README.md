@@ -11,8 +11,8 @@ Aaditya Rajput (100622434)<br>
 Welcome to our Course Work Repository! This repository contains all of the course work completed throughout the semester, organized into their respective folders. The course work includes project milestones and the final project.
 
 ## Table of Contents
-Project Milestones
-Final Project
+- Project Milestones
+- Final Project
 
 ## Project Milestones
 The project milestones folder contains all of the milestones completed throughout the semester for the final project. Each milestone is organized in its own folder with the milestone description as the folder name. This folder contains all of the code and resources used to complete the milestone as well as the questions answered in that milestone.
