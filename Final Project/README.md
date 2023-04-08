@@ -94,13 +94,63 @@ Filter Data Steps:
 
 
 Preprocess Steps:
+
 ![Preprocess Steps](https://github.com/preetpatel87/Cloud-Computing-Project-Group-T4/blob/main/Final%20Project/images/image13.png)
 
 
 Prediction Steps:
+
 ![Prediction Steps](https://github.com/preetpatel87/Cloud-Computing-Project-Group-T4/blob/main/Final%20Project/images/image18.png)
 
 
+## Execution of the Dataflow job:
 
+The image below shows the list of dataflow jobs before running the project dataflow job:
 
+![Dataflow before job run](https://github.com/preetpatel87/Cloud-Computing-Project-Group-T4/blob/main/Final%20Project/images/image2.png)
+
+The image below shows the dataflow job named ‘cloud-proj-demo’ in the running stage. We run the dataflow job using the following command:
+
+python prediction.py    --runner DataflowRunner    --project $PROJECT    --staging_location $BUCKET/staging    --temp_location $BUCKET/temp    --input $PROJECT:Highway_Trajectory.tracks02      --output $PROJECT:Highway_Trajectory.Predict    --region  northamerica-northeast2    --experiment use_unsupported_python_version    --streaming --setup_file ./setup.py --model $BUCKET/project_model --job_name cloud-proj-demo
+
+![Dataflow job in running state](https://github.com/preetpatel87/Cloud-Computing-Project-Group-T4/blob/main/Final%20Project/images/image10.png)
+
+The images below show the dataflow job after it has finished executing predictions on the provided input Big Query table. The first image shows the job status of the job as succeeded and the second image shows all the stages in the dataflow job:
+
+Suceeded Dataflow Job:
+
+![Suceeded Dataflow Job](https://github.com/preetpatel87/Cloud-Computing-Project-Group-T4/blob/main/Final%20Project/images/image11.png)
+
+The stages in the succeeded Dataflow job:
+
+![The stages in the succeeded Dataflow job](https://github.com/preetpatel87/Cloud-Computing-Project-Group-T4/blob/main/Final%20Project/images/image7.png)
+
+## Results:
+The following images show the results from the execution of the dataflow job. The first image below shows the Big Query table which was used to store the prediction data. Here we can see the width and height of the vehicle along with the predicted velocity. The second image shows the output of a subscriber script which simply prints the consumed messages.
+
+Big Query prediction output table:
+
+![Big Query prediction output table](https://github.com/preetpatel87/Cloud-Computing-Project-Group-T4/blob/main/Final%20Project/images/image19.png)
+
+Output of  the Pub/Sub subscriber script:
+
+![Output of  the Pub/Sub subscriber script:](https://github.com/preetpatel87/Cloud-Computing-Project-Group-T4/blob/main/Final%20Project/images/image1.png)
+
+## Conclusion:
+In conclusion, the team successfully completed the project and met all the project objectives using the knowledge gained from previous project milestones in the Cloud Computing course. The team used tools such as the Big Query, Buckets, Dataflow, and Pub/Sub to implement the cloud infrastructure of the project to streamline making predictions with the trained velocity predictor model. This project demonstrates that the team has gained valuable knowledge and experience with the technologies introduced in class to create cloud infrastructure for any project.
+
+## Appendix
+Velocity Predictor Model Training:
+
+![Imports](https://github.com/preetpatel87/Cloud-Computing-Project-Group-T4/blob/main/Final%20Project/images/image6.png)
+
+![Load and Prepare](https://github.com/preetpatel87/Cloud-Computing-Project-Group-T4/blob/main/Final%20Project/images/image8.png)
+
+![Testing Data](https://github.com/preetpatel87/Cloud-Computing-Project-Group-T4/blob/main/Final%20Project/images/image9.png)
+
+![](https://github.com/preetpatel87/Cloud-Computing-Project-Group-T4/blob/main/Final%20Project/images/image17.png)
+
+![](https://github.com/preetpatel87/Cloud-Computing-Project-Group-T4/blob/main/Final%20Project/images/image4.png)
+
+![](https://github.com/preetpatel87/Cloud-Computing-Project-Group-T4/blob/main/Final%20Project/images/image14.png)
 
