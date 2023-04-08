@@ -10,7 +10,19 @@
 - Clone the repo
 - Use the following script to run the project. **Note a service account with Pub/Sub access is required. Remember to enable the tools before executing the command below**
     ```bash
-    python prediction.py    --runner DataflowRunner    --project $PROJECT    --staging_location $BUCKET/staging    --temp_location $BUCKET/temp    --input $PROJECT:Highway_Trajectory.tracks02      --output $PROJECT:Highway_Trajectory.Predict    --region  northamerica-northeast2    --experiment use_unsupported_python_version    --streaming --setup ./setup.py --model $BUCKET/model --job_name cloud-proj-demo
+    python prediction.py \
+        --runner DataflowRunner \
+        --project $PROJECT \
+        --staging_location $BUCKET/staging \
+        --temp_location $BUCKET/temp \
+        --input $PROJECT:Highway_Trajectory.tracks02 \ 
+        --output $PROJECT:Highway_Trajectory.Predict \
+        --region  northamerica-northeast2 \
+        --experiment use_unsupported_python_version \
+        --streaming \
+        --setup ./setup.py \
+        --model $BUCKET/model \
+        --job_name cloud-proj-demo
     ```
     - Use the following script to populate ur environment variables. **Note they need to be updated each time a terminal session is started**
     ```bash
