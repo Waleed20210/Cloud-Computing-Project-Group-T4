@@ -85,6 +85,22 @@ After setting up Big Query, Pub/Sub Topic, and the exported model on the bucket,
 Before we continue to execution, we will explain the important parts of this script below:
 The image below shows the various stages in the dataflow job. First step in the ReadFromBQ stage where we will read data from the Big Query table. The name and path of the table needs to be provided in the “–input” argument when running the script. Once the data has been read, we will filter the data to remove any data that contains invalid or null values. The “filterRcds” function will check if the data is valid and will return true or false for the job to determine whether the data is valid or invalid. After filtering the data, we will prepare the data for inference in the preprocess data step. In this step we will run the “PreprocessDataDoFn()” function to remove all the required columns from the data. This preprocessing step reflects the processing of the data that was done during the model training. Next, after the data has been processed we will perform the model inference in the Predictions step. In this step, we first download and import the model from the cloud bucket storage. After the model has been imported, we can perform inference on the processed data. We append the velocity predictions along with the data for the next steps where we store and publish the prediction. Lastly, the storage and publishing of the prediction has been split into two parallel branches. In the first branch, we will simply store the data in a Predict table in Big Query using the “WriteToBigQuery” function. For this step, we provide the schema in which the data will be stored, and store the predictions to a table whose name and path has been provided in the output argument. In the second branch, we convert the data from a dictionary to a json and encode it to prepare it before publishing it to the Pub/Sub topic. Lastly, we will publish the prediction data to the topic using the “WriteToPubSub” function. The following images are snapshots of the script and the functions that were discussed above:
 
+Data Flow Steps:
 ![Data Flow Steps](https://github.com/preetpatel87/Cloud-Computing-Project-Group-T4/blob/main/Final%20Project/images/image5.png)
+
+
+Filter Data Steps:
+![Filter Data Steps](https://github.com/preetpatel87/Cloud-Computing-Project-Group-T4/blob/main/Final%20Project/images/image12.png)
+
+
+Preprocess Steps:
+![Preprocess Steps](https://github.com/preetpatel87/Cloud-Computing-Project-Group-T4/blob/main/Final%20Project/images/image13.png)
+
+
+Prediction Steps:
+![Prediction Steps](https://github.com/preetpatel87/Cloud-Computing-Project-Group-T4/blob/main/Final%20Project/images/image18.png)
+
+
+
 
 
