@@ -69,4 +69,4 @@ In this section, we will discuss the setup, implementation, and results of this 
 ### Before the Job Flow:
 Firstly, to set up the project we created a new database in Big Query called Highway_Trajectory. In this database, we will create tables from csv data files containing test data which includes vehicle dimensions data required by the model to predict the velocity of the vehicle on parts of the highway. The following image shows an example of a table containing test data in the dataset:
 
-![Big  Query Dataset with just the test tables.]([https://github.com/preetpatel87/Cloud-Computing-Project-Group-T4/blob/main/Final%20Project/images/image16.png](https://github.com/preetpatel87/Cloud-Computing-Project-Group-T4/blob/main/Final%20Project/images/image15.png))
+![Big  Query Dataset with just the test tables.](https://github.com/preetpatel87/Cloud-Computing-Project-Group-T4/blob/main/Final%20Project/images/image15.png)
