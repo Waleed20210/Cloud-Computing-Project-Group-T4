@@ -51,4 +51,22 @@ The goal of this project is to design and implement a system that can predict sp
 
 ## System Architecture:
 
-![Archtecture](https://github.com/preetpatel87/Cloud-Computing-Project-Group-T4/blob/main/Final%20Project/images/image16.png))
+![Archtecture](https://github.com/preetpatel87/Cloud-Computing-Project-Group-T4/blob/main/Final%20Project/images/image16.png)
+
+The above figure describes the architecture of the cloud infrastructure of this project. The project will utilize two BigQuery databases. One of the databases will be used to store test data that needs to be processed to extract data regarding velocity of vehicles based on width and size. This dataset will be populated using CSV data files created from the data collected by sensors (camera).  The other database will be used to store the values of the model prediction which can be utilized for any further analysis. The project will also utilize Google Pub/Sub to publish the model prediction data which can be utilized by any subscriber that requires real-time updated predictions. Dataflow will be used to automate the model predictions. These are the following stages in the Dataflow job:
+Read Table: The job begins by reading test data from Bigquery
+Filter Data: In this stage, any data that includes missing or invalid data for any of the required features for prediction will be filtered out
+Preprocessing Data: Here, the data is prepared for model inference. Any column other than the required data such as the vehicle dimensions will be dropped.
+Model Inference: The trained model will perform inference on the processed data to predict the velocity of each vehicle.
+a) Pub/Sub publisher: The prediction from the model will be steamed to a pub/sub topic. The data will first get mapped to a json before publishing to the topic. 
+b) Write to DB: The prediction will also be permanently stored to a BigQuery table to be used in the future for further analysis.
+
+
+## Implementation and Results:
+In this section, we will discuss the setup, implementation, and results of this project in various steps.
+
+
+### Before the Job Flow:
+Firstly, to set up the project we created a new database in Big Query called Highway_Trajectory. In this database, we will create tables from csv data files containing test data which includes vehicle dimensions data required by the model to predict the velocity of the vehicle on parts of the highway. The following image shows an example of a table containing test data in the dataset:
+
+![Big  Query Dataset with just the test tables.]([https://github.com/preetpatel87/Cloud-Computing-Project-Group-T4/blob/main/Final%20Project/images/image16.png](https://github.com/preetpatel87/Cloud-Computing-Project-Group-T4/blob/main/Final%20Project/images/image15.png))
