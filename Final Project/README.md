@@ -70,3 +70,8 @@ In this section, we will discuss the setup, implementation, and results of this 
 Firstly, to set up the project we created a new database in Big Query called Highway_Trajectory. In this database, we will create tables from csv data files containing test data which includes vehicle dimensions data required by the model to predict the velocity of the vehicle on parts of the highway. The following image shows an example of a table containing test data in the dataset:
 
 ![Big  Query Dataset with just the test tables.](https://github.com/preetpatel87/Cloud-Computing-Project-Group-T4/blob/main/Final%20Project/images/image15.png)
+
+
+Next, we uploaded the exported machine learning model to the cloud bucket of this project. This will enable dataflow to download this machine learning model when we import it to the dataflow job to perform model inference. The model was trained using the highD dataset and was exported as a file called ‘velocityPredictor.joblib’ (see appendix for model training screenshots). The following image shows the exported model stored in the cloud bucket: 
+
+![Google Cloud Bucket with the saved model](https://github.com/preetpatel87/Cloud-Computing-Project-Group-T4/blob/main/Final%20Project/images/image3.png)
