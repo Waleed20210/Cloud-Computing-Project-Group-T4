@@ -51,4 +51,4 @@ The goal of this project is to design and implement a system that can predict sp
 
 ## System Architecture:
 
-![Archtecture]([Final Project/images/image16.png](https://github.com/preetpatel87/Cloud-Computing-Project-Group-T4/blob/main/Final%20Project/images/image16.png))
+![Archtecture](https://github.com/preetpatel87/Cloud-Computing-Project-Group-T4/blob/main/Final%20Project/images/image16.png))
