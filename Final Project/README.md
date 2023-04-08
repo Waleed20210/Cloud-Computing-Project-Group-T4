@@ -5,8 +5,24 @@
 - [Cloud Project Demo Part1 ](https://drive.google.com/file/d/1l-yf8NnBPlca9OMT5YqYcd6cTy28LFTg/view?usp=share_link)
 - [Cloud Project Demo Part2 ](https://drive.google.com/file/d/1F1JJ9czU8AHLYVgC6FzjNKMN7j64o6xh/view?usp=share_link)
 
-## Team - Group T4 
-Waleed El Alawi (100764573)<br> 
+
+## How to Run(GCP required)
+- Clone the repo
+- Use the following script to run the project. **Note a service account with Pub/Sub access is required. Remember to enable the tools before executing the command below**
+    ```bash
+    python prediction.py    --runner DataflowRunner    --project $PROJECT    --staging_location $BUCKET/staging    --temp_location $BUCKET/temp    --input $PROJECT:Highway_Trajectory.tracks02      --output $PROJECT:Highway_Trajectory.Predict    --region  northamerica-northeast2    --experiment use_unsupported_python_version    --streaming --setup ./setup.py --model $BUCKET/model --job_name cloud-proj-demo
+    ```
+    - Use the following script to populate ur environment variables. **Note they need to be updated each time a terminal session is started**
+    ```bash
+    PROJECT=$(gcloud config list project --format "value(core.project)") && BUCKET=gs://$PROJECT-bucket
+    ```
+    - In a new terminal, use the script below to run the subscriber.
+        ```bash
+        python subscriber_design.py
+        ```
+
+## Team - Group T4
+Waleed El Alawi (100764573)<br>
 Preet Patel (100708239) <br>
 Tiwaloluwa Ojo (100700622)<br>
 Aaditya Rajput (100622434)<br>
